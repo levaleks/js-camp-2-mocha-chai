@@ -1,0 +1,27 @@
+{
+  "name": "timeout-bare-bone",
+  "version": "1.0.0",
+  "description": "JS Camp #3 – Testing",
+  "main": "timeout.js",
+  "scripts": {
+    "dev": "nodemon timeout.js",
+    "test": "mocha -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/levaleks/timeout-bare-bone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/levaleks/timeout-bare-bone/issues"
+  },
+  "homepage": "https://github.com/levaleks/timeout-bare-bone#readme",
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  },
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  }
+}
