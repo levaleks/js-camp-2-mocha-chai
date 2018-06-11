@@ -12,40 +12,34 @@ describe('sleep', function() {
     startTime = Date.now();
   });
 
-  it('should sleep at least 0ms', function (done) {
-    sleep(0).then(() => {
-      const endTime = Date.now();
+  it('should sleep at least 0ms', async function () {
+    await sleep(0);
 
-      const timePassed = endTime - startTime;
+    const endTime = Date.now();
 
-      assert.operator(timePassed, '>=', 0);
+    const timePassed = endTime - startTime;
 
-      done();
-    })
+    assert.operator(timePassed, '>=', 0);
   });
 
-  it('should sleep at least 50ms', function (done) {
-    sleep(50).then(() => {
-      const endTime = Date.now();
+  it('should sleep at least 50ms', async function () {
+    await sleep(50);
 
-      const timePassed = endTime - startTime;
+    const endTime = Date.now();
 
-      assert.operator(timePassed, '>=', 50);
+    const timePassed = endTime - startTime;
 
-      done();
-    })
+    assert.operator(timePassed, '>=', 50);
   });
 
-  it('should sleep no more 100ms', function (done) {
-    sleep(75).then(() => {
-      const endTime = Date.now();
+  it('should sleep no more 100ms', async function () {
+    await sleep(75);
 
-      const timePassed = endTime - startTime;
+    const endTime = Date.now();
 
-      assert.operator(timePassed, '>=', 75);
+    const timePassed = endTime - startTime;
 
-      done();
-    })
+    assert.operator(timePassed, '>=', 75);
   });
 });
 
@@ -54,35 +48,31 @@ describe('sleep', function() {
  */
 
 describe('timeout', function() {
-  it('should resolve if passing resolved promise', function (done) {
-    timeout(Promise.resolve('resolved'), 0).then((result) => {
-      assert.equal(result, 'resolved');
+  it('should resolve if passing resolved promise', async function () {
+    const result = await timeout(Promise.resolve('resolved'), 0);
 
-      done();
-    })
+    assert.equal(result, 'resolved');
   });
 
-  it('should reject if passing rejected promise', function (done) {
-    timeout(Promise.reject('rejected'), 0).catch((result) => {
-      assert.equal(result, 'rejected');
-
-      done();
-    })
+  it('should reject if passing rejected promise', async function () {
+    try {
+      await timeout(Promise.reject('rejected'), 0);
+    } catch (error) {
+      assert.equal(error, 'rejected');
+    }
   });
 
-  it('should resolve if one promise resolves before other', function (done) {
-    timeout(sleep(50), 100).then((result) => {
-      assert.notEqual(result, 'timed out');
+  it('should resolve if one promise resolves before other', async function () {
+    const result = await timeout(sleep(50), 100);
 
-      done();
-    })
+    assert.notEqual(result, 'timed out');
   });
 
-  it('should reject if one promise rejects before other', function (done) {
-    timeout(sleep(100), 50).catch((result) => {
-      assert.equal(result, 'timed out');
-
-      done();
-    })
+  it('should reject if one promise rejects before other', async function () {
+    try {
+      await timeout(sleep(100), 50);
+    } catch (error) {
+      assert.equal(error, 'timed out');
+    }
   });
 });
