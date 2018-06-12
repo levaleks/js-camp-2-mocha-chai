@@ -57,6 +57,8 @@ describe('timeout', function() {
   it('should reject if passing rejected promise', async function () {
     try {
       await timeout(Promise.reject('rejected'), 0);
+
+      assert.ok(false);
     } catch (error) {
       assert.equal(error, 'rejected');
     }
@@ -71,6 +73,8 @@ describe('timeout', function() {
   it('should reject if one promise rejects before other', async function () {
     try {
       await timeout(sleep(100), 50);
+
+      assert.ok(false);
     } catch (error) {
       assert.equal(error, 'timed out');
     }
