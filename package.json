@@ -1,23 +1,20 @@
 {
   "name": "timeout-bare-bone",
   "version": "1.0.0",
-  "description": "JS Camp #3 – Testing",
+  "description": "",
   "main": "timeout.js",
   "scripts": {
-    "dev": "nodemon timeout.js",
-    "test": "mocha -w"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/levaleks/timeout-bare-bone.git"
+    "serve": "nodemon timeout.js --exec \"eslint timeout.js && node\"",
+    "test": "concurrently \"mocha -w\" \"esw \"**/*.js\" --watch\""
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/levaleks/timeout-bare-bone/issues"
-  },
-  "homepage": "https://github.com/levaleks/timeout-bare-bone#readme",
   "devDependencies": {
+    "concurrently": "^3.6.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-watch": "^4.0.0",
     "nodemon": "^1.17.5"
   },
   "dependencies": {

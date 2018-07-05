@@ -1,14 +1,18 @@
-### Legend
-1. fork this repository
-2. clone forked repo to your machine
-3. initialize package.json
-4. install nodemon locally and try to tun timeout.js with it
-5. install mocha locally and write test for timeout() function
-6. push to your forked repo, send me a link
-7. celebrate
+# JS Camp #2 – Mocha/Chai
 
-### Up and going
+Task – write tests using Mocha and Chai.
+
+## Install
+
 ```
-npm run dev
-npm run test
+git clone https://github.com/levaleks/js-camp-2-mocha-chai.git
+cd js-camp-2-mocha-chai
+npm install
+```
+
+## Test & Start
+
+```
+run run test
+npm run serve
 ```

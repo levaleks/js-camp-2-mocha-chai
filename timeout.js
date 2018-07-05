@@ -1,7 +1,3 @@
-module.exports.sleep = sleep;
-module.exports.timeout = timeout;
-
-
 /**
  * @desc Reject in 't' milliseconds,
  * or it will be resolved/rejected depending on result of 'p' promise.
@@ -12,7 +8,7 @@ module.exports.timeout = timeout;
  */
 function timeout(p, t) {
   const failure = new Promise((resolve, reject) => {
-    setTimeout(() => reject('timed out'), t)
+    setTimeout(() => reject(new Error('timed out')), t);
   });
 
   return Promise.race([failure, p]);
@@ -30,6 +26,9 @@ function sleep(interval) {
       console.log(`slept for ${interval} ms`);
       resolve();
     },
-    interval
+    interval,
   ));
 }
+
+exports.sleep = sleep;
+exports.timeout = timeout;
