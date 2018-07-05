@@ -1,6 +1,6 @@
 # JS Camp #2 – Mocha/Chai
 
-Task – write tests using Mocha and Chai.
+Task – write tests for timeout.js using Mocha and Chai.
 
 ## Install
 
