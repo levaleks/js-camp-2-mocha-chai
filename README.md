@@ -13,6 +13,6 @@ npm install
 ## Test & Start
 
 ```
-run run test
+npm run test
 npm run serve
 ```
