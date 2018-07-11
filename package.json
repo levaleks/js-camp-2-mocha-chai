@@ -5,7 +5,7 @@
   "main": "timeout.js",
   "scripts": {
     "serve": "nodemon timeout.js --exec \"eslint timeout.js && node\"",
-    "test": "concurrently \"mocha -w\" \"esw \"**/*.js\" --watch\""
+    "test": "concurrently \"mocha -w\" \"esw **/*.js --watch\""
   },
   "author": "",
   "license": "ISC",
