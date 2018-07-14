@@ -1,11 +1,11 @@
 {
-  "name": "timeout-bare-bone",
+  "name": "js-camp-2-mocha-chai",
   "version": "1.0.0",
   "description": "",
   "main": "timeout.js",
   "scripts": {
     "serve": "nodemon timeout.js --exec \"eslint timeout.js && node\"",
-    "test": "concurrently \"mocha -w\" \"esw **/*.js --watch\""
+    "test": "concurrently \"esw **/*.js --watch\" \"mocha -w\""
   },
   "author": "",
   "license": "ISC",
@@ -14,8 +14,8 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
-    "eslint-watch": "^4.0.0",
-    "nodemon": "^1.17.5"
+    "eslint-watch": "^4.0.1",
+    "nodemon": "^1.18.2"
   },
   "dependencies": {
     "chai": "^4.1.2",
