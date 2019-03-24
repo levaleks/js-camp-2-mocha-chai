@@ -10,15 +10,15 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "concurrently": "^3.6.0",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-watch": "^4.0.1",
-    "nodemon": "^1.18.2"
+    "concurrently": "^4.1.0",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-watch": "^5.0.1",
+    "nodemon": "^1.18.10"
   },
   "dependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^5.2.0"
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2"
   }
 }
